@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Soul Taco Quiz</title>
+<style>
+body {
+background-image: url("background.jpg");
+font-family: Helvetica;
+}
+
+#main {
+width: 80%;
+max-width: 950px;
+border: 1px gray solid;
+margin: auto;
+padding: 10px;
+background-color: white;
+border-radius: 10px;
+}
+
+#header {
+margin-top: 0;
+border: 2px solid black;
+padding: 5px;
+height: 300px;
+background: beige;
+background-image: url("squad.jpg");
+color: white;
+}
+#question {
+width: 80%;
+max-width: 950px;
+border: 1px gray solid;
+margin: auto;
+padding: 10px;
+background-color: white;
+border-radius: 10px;
+}
+
+</style>
+</head>
+<body>
+<div id="main">
+<div id="header" ><h1>What is your soul taco?</h1></div>
+<table>
+<form  id="form1" />
+<tr><td>
+<p>Select your favorite Taco place:</p></td><td>
+<input type="radio" name="place" id="fishtaco" value="1" />Chuy's</td><td>
+<input type="radio" name="place" id="barbacoa" value="2" />Torchy's Tacos</td><td>
+<input type="radio" name="place" id="fajita" value="3" />Serranos</td><td>
+<input type="radio" name="place" id="breakfast" value="4" />Lucy's Tacos</td><td>
+<input type="radio" name="place" id="beanandcheese" value="5" />Taco Cabana</td><td>
+</td></tr>
+
+<tr><td>
+<p>Pick a meat!</p></td><td>
+<input type="radio" name="meat" id="fishtaco" value="1" />Fish</td><td>
+<input type="radio" name="meat" id="barbacoa" value="2" />Beef</td><td>
+<input type="radio" name="meat" id="fajita" value="3" />Chicken</td><td>
+<input type="radio" name="meat" id="breakfast" value="4" />No meat!</td><td>
+<input type="radio" name="meat" id="beanandcheese" value="5" />Do beans count?</td><td>
+<tr><td>
+<p>What do you need in a taco?!</p></td><td>
+<input type="radio" name="topping" id="fishtaco" value="1" />Lettuce</td><td>
+<input type="radio" name="topping" id="barbacoa" value="2" />Guacamole</td><td>
+<input type="radio" name="topping" id="fajita" value="3" />Onion</td><td>
+<input type="radio" name="topping" id="breakfast" value="4" />Egg</td><td>
+<input type="radio" name="topping" id="beanandcheese" value="5" />Cheese</td><td>
+<tr><td>
+<p>What do you feel is your dream taco?</p></td><td>
+<input type="radio" name="tacofav" id="fishtaco" value="1" />Fish taco</td><td>
+<input type="radio" name="tacofav" id="barbacoa" value="2" />Barbacoa</td><td>
+<input type="radio" name="tacofav" id="fajita" value="3" />Fajita</td><td>
+<input type="radio" name="tacofav" id="breakfast" value="4" />Breakfast taco</td><td>
+<input type="radio" name="tacofav" id="beanandcheese" value="5" />Bean and Cheese</td><td>
+</td></tr>
+<tr><td>
+<p>What kind of drink goes best with your taco?</p></td><td>
+<input type="radio" name="drink" id="fishtaco" value="1" />Water</td><td>
+<input type="radio" name="drink" id="barbacoa" value="2" />Sweet Tea</td><td>
+<input type="radio" name="drink" id="fajita" value="3" />Dr. Pepper</td><td>
+<input type="radio" name="drink" id="breakfast" value="4" />Orange Juice</td><td>
+<input type="radio" name="drink" id="beanandcheese" value="5" />I'll drink anything with it!</td><td>
+</tr>
+<tr><td>
+<br />
+<input type="submit" value="Submit">
+</td></tr>
+</form>
+</table>
+<p id="answer"></p>
+<p id="answer2"></p>
+</div>
+<script>
+ 
+    
+	   document.getElementById("form1").onsubmit=function() {
+	   
+	  place = parseInt(document.querySelector('input[name = "place"]:checked').value);
+	   
+	  meat = parseInt(document.querySelector('input[name="meat"]:checked').value);
+	   
+	  topping = parseInt(document.querySelector('input[name = "topping"]:checked').value);
+	   
+	  tacofav = parseInt(document.querySelector('input[name = "tacofav"]:checked').value);
+	  
+	  drink = parseInt(document.querySelector('input[name = "drink"]:checked').value);
+	   
+	   total= place + meat + topping + tacofav + drink;
+	   
+	  
+	   //document.getElementById("answer").innerHTML = total;
+	   
+	   
+
+	   if(total <= 5) {
+document.getElementById("answer2").innerHTML = " You are a fishtaco. <br><img src ='sailormoon.jpg'>";
+}
+
+   if(total >=6 && total < 11) {
+document.getElementById("answer2").innerHTML = "You are a barbacoa taco. <br><img src ='sailormercury.jpg'>";
+}
+	
+	if(total >=12 && total < 16) {
+document.getElementById("answer2").innerHTML = "You are a fajita taco.<br><img src ='sailormars.jpg'>";
+}   
+
+	if(total >=17 && total < 21) {
+document.getElementById("answer2").innerHTML = "You are a breakfast taco.<br><img src ='sailorjupiter.jpg'>";
+}   
+
+	if(total >= 22) {
+document.getElementById("answer2").innerHTML = "You are a bean and cheese taco. <br><img src ='sailorvenus.jpg'>";
+}   
+
+
+
+		   
+	   return false; // required to not refresh the page; just leave this here
+	   }// end the submit function
+	
+
+</script>
+
+
+
+</body>
+</html>
